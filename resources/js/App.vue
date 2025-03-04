@@ -1,19 +1,23 @@
 <script setup>
-//
+import { RouterLink, RouterView } from 'vue-router'
+
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+    <header class="bg-gray-100 text-gray-800">
+        <div class="max-w-7xl mx-auto px-4 flex items-center justify-between py-2">
+            <img class="w-10" alt="Vue logo" src="@/assets/logo.svg" width="125" height="125" />
 
-    <div class="wrapper">
-      <h1 class="text-9xl">Hello World!</h1>
-    </div>
-  </header>
+            <div>
+                <HelloWorld msg="You did it!" />
 
-  <main>
-    <div class="">
+                <nav class="flex items-center space-x-4">
+                    <RouterLink activeClass="text-red-600" to="/">Home</RouterLink>
+                    <RouterLink activeClass="text-red-600" to="/about">About</RouterLink>
+                </nav>
+            </div>
+        </div>
+    </header>
 
-    </div>
-  </main>
+    <RouterView />
 </template>
