@@ -2,9 +2,27 @@
 This is a simple ToDo List project using Laravel and Vue.js, 
 where you can add, edit, delete and mark as done the tasks.
 
+## Setup of the project
+- Clone the project
+- Run `npm install`
+- Run `npm run build`
+- Run `composer install`
+- Run `cp .env.example .env`
+- Run `php artisan key:generate`
+- Run `php artisan migrate --seed`
+- Run `php artisan serve`
+
 ## key considerations
 - I did not create two separate projects for the frontend and backend (Api), Instead the frontend is integrated into the Laravel project. 
 You can find the frontend setup in the **resources/js** folder and **welcome.blade.php**.
+- I have installed vue-router for managing the routes in the frontend, and pinia for managing the state.
+
+### About the usage of Pinia:
+- I only used it in auth because i wanted to showcase the different ways of managing the state in Vue.js that I know of until now.
+
+### About tests
+- I have written some basic feature tests for AuthController, and TaskController.
+- you can run the tests using `php artisan test` or `vendor/bin/phpunit`
 
 
 ## Contributing
