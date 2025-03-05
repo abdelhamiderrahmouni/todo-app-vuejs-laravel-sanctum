@@ -25,7 +25,7 @@ onBeforeMount(async () => {
             <img class="w-10" alt="Vue logo" src="@/assets/logo.svg" width="125" height="125" />
 
             <div>
-                <nav class="flex items-center space-x-4">
+                <nav class="flex items-center space-x-3 lg:space-x-4 text-sm md:text-base">
                     <RouterLink activeClass="text-red-600" to="/">Home</RouterLink>
                     <RouterLink activeClass="text-red-600" to="/about">About</RouterLink>
                     <span>|</span>
