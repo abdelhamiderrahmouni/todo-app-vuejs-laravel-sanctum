@@ -23,6 +23,9 @@ class TaskController extends Controller
             $query->with('user');
         }
 
+        $query->where('user_id', auth()->id())
+            ->latest();
+
         return TaskResource::collection($query->paginate());
     }
 
@@ -31,7 +34,10 @@ class TaskController extends Controller
      */
     public function store(StoreTaskRequest $request)
     {
-        $task = Task::create($request->validated());
+        $task = Task::create([
+            ...$request->validated(),
+            'user_id' => auth()->id(),
+        ]);
 
         return new TaskResource($task);
     }
@@ -50,6 +56,8 @@ class TaskController extends Controller
     public function update(UpdateTaskRequest $request, Task $task)
     {
         $task->update($request->validated());
+
+        $task->refresh();
 
         return new TaskResource($task);
     }
