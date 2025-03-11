@@ -27,4 +27,16 @@ class UpdateTaskRequest extends FormRequest
             'is_completed' => ['boolean'],
         ];
     }
+
+    public function messages(): array
+    {
+        return [
+            'name.required' => 'The task name is required.',
+            'name.string' => 'The task name must be a string.',
+            'name.max' => 'The task name must not be greater than 255 characters.',
+            'body.string' => 'The task body must be a string.',
+            'body.max' => 'The task body must not be greater than 500 characters.',
+            'is_completed.boolean' => 'The task completion status must be a boolean.',
+        ];
+    }
 }
