@@ -21,11 +21,9 @@ const emit= defineEmits(["task-deleted"])
 function enableTaskEdit() {
     editEnabled.value = true;
 
-    if (editEnabled.value) {
-        setTimeout(() => {
-            inputRef.value.focus();
-        }, 0);
-    }
+    setTimeout(() => {
+        inputRef.value.focus();
+    }, 0);
 }
 
 function disableTaskEdit() {
