@@ -27,8 +27,6 @@ onMounted(() => {
         })
         .catch (error => {
             if (error.response?.data?.errors) {
-                console.log(error.response.data.errors);
-                console.log(error.response.data.data.errors);
                 errors.value = error.response.data.errors;
             }
         });
