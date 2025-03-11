@@ -18,11 +18,6 @@ class TaskController extends Controller
     {
         $query = Task::query();
 
-        if ($request->has('with_user'))
-        {
-            $query->with('user');
-        }
-
         $query->where('user_id', auth()->id())
             ->latest();
 
